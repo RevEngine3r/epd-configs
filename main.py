@@ -4,6 +4,7 @@ import os
 import shutil
 from datetime import datetime
 import urllib.parse
+import pathlib as pl
 
 
 def get_v2ray_links(url):
@@ -204,6 +205,11 @@ if __name__ == "__main__":
         v2ray_configs = get_v2ray_links(url)
         if v2ray_configs:
             all_v2ray_configs.extend(v2ray_configs)
+
+    sub_dir=pl.Path("sub")
+    sub_dir.mkdir(parents=True, exist_ok=True)
+
+    (sub_dir/"all.txt").write_text(all_v2ray_configs,encoding="utf8")
 
     if all_v2ray_configs:
         save_configs_by_region(all_v2ray_configs)
