@@ -209,7 +209,7 @@ if __name__ == "__main__":
     sub_dir=pl.Path("sub")
     sub_dir.mkdir(parents=True, exist_ok=True)
 
-    (sub_dir/"all.txt").write_text('\n'.join(all_v2ray_configs),encoding="utf8")
+    
 
     if all_v2ray_configs:
         save_configs_by_region(all_v2ray_configs)
@@ -217,3 +217,13 @@ if __name__ == "__main__":
         print("Configs saved successfully.")
     else:
         print("No V2Ray configs found.")
+
+    output_file = sub_dir/"all.txt"
+    with output_file.open("w") as outfile:
+        for txt_file in Path("sub").glob("*.txt"):
+            if txt_file.name == output_file.name:
+                continue
+            with txt_file.open() as infile:
+                outfile.write(infile.read() + "\n")
+
+    (sub_dir/"all_new.txt").write_text('\n'.join(all_v2ray_configs),encoding="utf8")
