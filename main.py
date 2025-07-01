@@ -220,7 +220,7 @@ if __name__ == "__main__":
 
     output_file = sub_dir/"all.txt"
     with output_file.open("w") as outfile:
-        for txt_file in Path("sub").glob("*.txt"):
+        for txt_file in sub_dir.glob("*.txt"):
             if txt_file.name == output_file.name:
                 continue
             with txt_file.open() as infile:
