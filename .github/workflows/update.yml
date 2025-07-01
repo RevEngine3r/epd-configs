@@ -22,7 +22,7 @@ jobs:
         run: |
           git config --global user.email "Epodonios@gmail.com"
           git config --global user.name "Epodonios"
-          git remote set-url origin https://github.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs.git
+          git remote set-url origin https://github.com/RevEngine3r/epd-configs.git
       
       - name: Install dependencies
         run: |
