@@ -209,7 +209,7 @@ if __name__ == "__main__":
     sub_dir=pl.Path("sub")
     sub_dir.mkdir(parents=True, exist_ok=True)
 
-    (sub_dir/"all.txt").write_text(all_v2ray_configs,encoding="utf8")
+    (sub_dir/"all.txt").write_text('\n'.join(all_v2ray_configs),encoding="utf8")
 
     if all_v2ray_configs:
         save_configs_by_region(all_v2ray_configs)
