@@ -228,7 +228,7 @@ if __name__ == "__main__":
 
     (sub_dir/"all_new.txt").write_text('\n'.join(all_v2ray_configs),encoding="utf8")
 
-    pl.Path('vvt.txt').write_text('\n'.join([l for l in pl.Path('all.txt').read_text(encoding='utf-8').splitlines() if l.lower().startswith(('vmess:','vless:','trojan:'))]), encoding='utf-8')
+    pl.Path(sub_dir/'vvt.txt').write_text('\n'.join([l for l in pl.Path(sub_dir/'all.txt').read_text(encoding='utf-8').splitlines() if l.lower().startswith(('vmess:','vless:','trojan:'))]), encoding='utf-8')
 
-    pl.Path('vvt_new.txt').write_text('\n'.join([l for l in pl.Path('all_new.txt').read_text(encoding='utf-8').splitlines() if l.lower().startswith(('vmess:','vless:','trojan:'))]), encoding='utf-8')
+    pl.Path(sub_dir/'vvt_new.txt').write_text('\n'.join([l for l in pl.Path(sub_dir/'all_new.txt').read_text(encoding='utf-8').splitlines() if l.lower().startswith(('vmess:','vless:','trojan:'))]), encoding='utf-8')
 
